@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UC Irvine IEEE Eta Kappa Nu | Zeta Omega Chapter</title>
+  <meta name="description" content="UCI IEEE-HKN Zeta Omega Chapter — Recognizing excellence in Electrical and Computer Engineering at UC Irvine." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --uci-blue: #003764;
+      --uci-gold: #FFD200;
+      --uci-blue-light: #E8F1F8;
+      --uci-blue-muted: #B8D0E8;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --text-tertiary: #888;
+      --border: #e0e0e0;
+      --bg-secondary: #f7f7f5;
+      --bg-primary: #ffffff;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--text-primary);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    .topbar {
+      background: var(--uci-blue);
+      padding: 0.7rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .hkn-badge {
+      width: 40px; height: 40px;
+      background: var(--uci-gold);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Source Serif 4', serif;
+      font-size: 14px; color: var(--uci-blue); letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+    .site-title { color: #fff; font-size: 14px; font-weight: 400; line-height: 1.4; }
+    .site-title span { display: block; font-size: 11px; color: var(--uci-blue-muted); font-weight: 300; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      font-size: 13px; color: var(--uci-blue-muted);
+      text-decoration: none; font-weight: 300; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--uci-gold); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 4rem 2rem 3rem;
+      max-width: 920px; margin: 0 auto;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .chapter-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--uci-blue-light); color: var(--uci-blue);
+      font-size: 11.5px; font-weight: 500;
+      padding: 4px 14px; border-radius: 20px;
+      margin-bottom: 1.25rem; letter-spacing: 0.04em;
+    }
+    .chapter-tag i { font-size: 13px; }
+    .hero h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 300; line-height: 1.18;
+      color: var(--text-primary); margin-bottom: 1rem;
+    }
+    .hero h1 strong { font-weight: 400; color: var(--uci-blue); }
+    .purpose-block {
+      border-left: 3px solid var(--uci-gold);
+      padding: 1rem 1.25rem;
+      background: var(--bg-secondary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+    }
+    .purpose-block p {
+      font-size: 14px; color: var(--text-secondary);
+      line-height: 1.8; font-weight: 300; font-style: italic;
+    }
+    .purpose-block cite {
+      font-size: 12px; color: var(--text-tertiary);
+      font-style: normal; display: block; margin-top: 8px;
+    }
+    .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2rem; }
+    .btn-gold {
+      background: var(--uci-gold); color: var(--uci-blue);
+      padding: 11px 24px; border-radius: 6px;
+      font-size: 13.5px; font-weight: 500;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: opacity 0.2s; display: inline-block;
+    }
+    .btn-gold:hover { opacity: 0.85; }
+    .btn-outline {
+      background: transparent; color: var(--text-primary);
+      padding: 11px 22px; border-radius: 6px;
+      font-size: 13.5px; font-weight: 400;
+      text-decoration: none; border: 1px solid var(--border);
+      cursor: pointer; transition: background 0.2s; display: inline-block;
+    }
+    .btn-outline:hover { background: var(--bg-secondary); }
+
+    /* ── CONTENT ── */
+    .content { padding: 3rem 2rem; max-width: 920px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 11px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-tertiary);
+      font-weight: 500; margin-bottom: 1.1rem;
+    }
+
+    /* Three pillars */
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin-bottom: 2.5rem;
+    }
+    .pillar {
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.25rem 1.5rem;
+      background: var(--bg-primary);
+      transition: border-color 0.2s;
+    }
+    .pillar:hover { border-color: #bbb; }
+    .pillar-num {
+      font-family: 'Source Serif 4', serif;
+      font-size: 2rem; color: var(--uci-blue);
+      font-weight: 300; line-height: 1; margin-bottom: 0.65rem;
+    }
+    .pillar h3 { font-size: 13.5px; font-weight: 500; margin-bottom: 6px; }
+    .pillar p { font-size: 12.5px; color: var(--text-secondary); line-height: 1.65; font-weight: 300; }
+
+    /* Eligibility banner */
+    .eligibility {
+      background: var(--uci-blue);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      margin-bottom: 2.5rem;
+      display: flex; gap: 2.5rem;
+      flex-wrap: wrap; align-items: center;
+    }
+    .elig-stat { text-align: center; }
+    .elig-stat .num {
+      font-family: 'Source Serif 4', serif;
+      font-size: 2.1rem; font-weight: 300;
+      color: var(--uci-gold); line-height: 1;
+    }
+    .elig-stat .lbl {
+      font-size: 11px; color: var(--uci-blue-muted);
+      margin-top: 4px; font-weight: 300;
+    }
+    .elig-text { flex: 1; min-width: 220px; }
+    .elig-text h3 { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 7px; }
+    .elig-text p { font-size: 12.5px; color: var(--uci-blue-muted); line-height: 1.7; font-weight: 300; }
+
+    /* Two-col info cards */
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px; margin-bottom: 2.5rem;
+    }
+    .info-card {
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      background: var(--bg-primary);
+      transition: border-color 0.2s;
+    }
+    .info-card:hover { border-color: #bbb; }
+    .info-card h3 {
+      font-size: 13px; font-weight: 500;
+      margin-bottom: 12px;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .info-card h3 i { font-size: 16px; color: var(--uci-blue); }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .info-list li {
+      font-size: 12.5px; color: var(--text-secondary);
+      font-weight: 300; line-height: 1.55;
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .info-list li::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--uci-gold);
+      margin-top: 5px; flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 1.5rem 2rem;
+      border-top: 0.5px solid var(--border);
+      max-width: 920px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 10px;
+    }
+    .footer p { font-size: 11.5px; color: var(--text-tertiary); font-weight: 300; }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a {
+      font-size: 11.5px; color: var(--text-tertiary);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .topbar { padding: 0.7rem 1rem; }
+      .hero, .content { padding-left: 1rem; padding-right: 1rem; }
+      .footer { padding-left: 1rem; padding-right: 1rem; }
+      .eligibility { gap: 1.25rem; padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="topbar">
+    <div class="topbar-left">
+      <div class="hkn-badge">ΗΚΝ</div>
+      <div class="site-title">
+        UCI IEEE Eta Kappa Nu
+        <span>Zeta Omega Chapter · Henry Samueli School of Engineering</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#members">Members</a>
+      <a href="#officers">Officers</a>
+      <a href="#events">Events</a>
+      <a href="#tutoring">Tutoring</a>
+      <a href="#join">Join</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="chapter-tag">
+      <i class="ti ti-award" aria-hidden="true"></i>
+      IEEE-HKN Honor Society · UC Irvine
+    </div>
+    <h1>
+      <strong>UC Irvine</strong> IEEE<br>Eta Kappa Nu
+    </h1>
+    <div class="purpose-block">
+      <p>"To encourage excellence in education for the benefit of the public by: marking in a fitting manner those who have conferred honor upon their Alma Mater by distinguished scholarship and exemplary character..."</p>
+      <cite>— HKN Mission Statement</cite>
+    </div>
+    <div class="cta-row">
+      <a class="btn-gold" href="#join">Apply for Membership</a>
+      <a class="btn-outline" href="#tutoring">Free Tutoring →</a>
+      <a class="btn-outline" href="#officers">Meet the Officers →</a>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <p class="section-eyebrow">Our Purpose</p>
+    <div class="three-col">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <h3>Academic Excellence</h3>
+        <p>Recognizing students in the top third of their junior and senior class in ECE and related engineering programs.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <h3>Community Service</h3>
+        <p>Providing free tutoring, outreach, and mentorship to undergraduate students across the School of Engineering.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <h3>Professional Growth</h3>
+        <p>Connecting members to IEEE's global network of engineers, researchers, and industry leaders.</p>
+      </div>
+    </div>
+
+    <!-- Eligibility banner -->
+    <div class="eligibility" id="join">
+      <div class="elig-stat">
+        <div class="num">Top ⅓</div>
+        <div class="lbl">Junior / Senior GPA</div>
+      </div>
+      <div class="elig-stat">
+        <div class="num">1904</div>
+        <div class="lbl">Founded nationally</div>
+      </div>
+      <div class="elig-stat">
+        <div class="num">300+</div>
+        <div class="lbl">Global chapters</div>
+      </div>
+      <div class="elig-text">
+        <h3>Membership Eligibility</h3>
+        <p>Eligible students are invited based on GPA standing within their class. Invitations are sent each academic year — check your UCI email. Graduate students and faculty may also be inducted.</p>
+      </div>
+    </div>
+
+    <!-- Get Involved -->
+    <p class="section-eyebrow" id="tutoring">Get Involved</p>
+    <div class="two-col">
+      <div class="info-card">
+        <h3><i class="ti ti-school" aria-hidden="true"></i>Free Tutoring</h3>
+        <ul class="info-list">
+          <li>Drop-in sessions for lower &amp; upper-div ECE/CS courses</li>
+          <li>Staffed by active HKN members</li>
+          <li>Held weekly in the Engineering buildings</li>
+          <li>No appointment needed — just show up</li>
+        </ul>
+      </div>
+      <div class="info-card" id="events">
+        <h3><i class="ti ti-calendar-event" aria-hidden="true"></i>Events &amp; Activities</h3>
+        <ul class="info-list">
+          <li>Induction ceremonies each academic year</li>
+          <li>Industry networking nights &amp; company tours</li>
+          <li>Resume workshops and mock interviews</li>
+          <li>Social events and community outreach</li>
+        </ul>
+      </div>
+      <div class="info-card" id="members">
+        <h3><i class="ti ti-users" aria-hidden="true"></i>Member Benefits</h3>
+        <ul class="info-list">
+          <li>Official IEEE-HKN membership certificate</li>
+          <li>Access to exclusive alumni network</li>
+          <li>Priority for research and internship referrals</li>
+          <li>Leadership opportunities as chapter officer</li>
+        </ul>
+      </div>
+      <div class="info-card" id="officers">
+        <h3><i class="ti ti-mail" aria-hidden="true"></i>Contact Us</h3>
+        <ul class="info-list">
+          <li>Email: hkn@uci.edu</li>
+          <li>Located at UC Irvine, Irvine CA 92697</li>
+          <li>Henry Samueli School of Engineering</li>
+          <li>Follow us on Instagram &amp; LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 IEEE Eta Kappa Nu · Zeta Omega Chapter · UC Irvine</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="https://hkn.org" target="_blank" rel="noopener">IEEE-HKN National</a>
+      <a href="https://engineering.uci.edu" target="_blank" rel="noopener">UCI Engineering</a>
+    </div>
+  </footer>
+
+</body>
+</html>
